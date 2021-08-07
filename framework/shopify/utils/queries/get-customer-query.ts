@@ -10,6 +10,35 @@ export const getCustomerQuery = /* GraphQL */ `
       tags
       acceptsMarketing
       createdAt
+      orders(first: 5) {
+        edges {
+          node {
+            id
+            currencyCode
+            financialStatus
+            name
+            phone
+            shippingAddress {
+              address1
+              address2
+              city
+              country
+            }
+            currentTotalPrice {
+              amount
+              currencyCode
+            }
+            subtotalPriceV2 {
+              amount
+              currencyCode
+            }
+            totalShippingPriceV2 {
+              amount
+              currencyCode
+            }
+          }
+        }
+      }
     }
   }
 `
