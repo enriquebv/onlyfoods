@@ -2,7 +2,7 @@
   "name": "nextjs-commerce",
   "version": "1.0.0",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "analyze": "BUNDLE_ANALYZE=both yarn build",
@@ -10,7 +10,7 @@
     "prettier-fix": "prettier --write .",
     "find:unused": "npx next-unused",
     "generate": "graphql-codegen",
-    "generate:shopify": "DOTENV_CONFIG_PATH=./.env.local graphql-codegen -r dotenv/config --config framework/shopify/codegen.json",
+    "generate:shopify": "cross-env DOTENV_CONFIG_PATH=./.env.local graphql-codegen -r dotenv/config --config framework/shopify/codegen.json",
     "generate:vendure": "graphql-codegen --config framework/vendure/codegen.json",
     "generate:definitions": "node framework/bigcommerce/scripts/generate-definitions.js"
   },
@@ -26,6 +26,7 @@
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.3.1",
     "cookie": "^0.4.1",
+    "cross-env": "^7.0.3",
     "email-validator": "^2.0.4",
     "immutability-helper": "^3.1.1",
     "js-cookie": "^2.2.1",

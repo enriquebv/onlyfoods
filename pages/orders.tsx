@@ -3,6 +3,7 @@ import commerce from '@lib/api/commerce'
 import { Bag } from '@components/icons'
 import { Layout } from '@components/common'
 import { Container, Text } from '@components/ui'
+import { useCustomer } from 'framework/local/customer'
 
 export async function getStaticProps({
   preview,
@@ -21,6 +22,8 @@ export async function getStaticProps({
 }
 
 export default function Orders() {
+  const customer = useCustomer()
+
   return (
     <Container>
       <Text variant="pageHeading">My Orders</Text>
