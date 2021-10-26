@@ -10,7 +10,7 @@ export const getCustomerQuery = /* GraphQL */ `
       tags
       acceptsMarketing
       createdAt
-      orders(first: 5) {
+      orders(first: 10) {
         edges {
           node {
             id
@@ -35,6 +35,28 @@ export const getCustomerQuery = /* GraphQL */ `
             totalShippingPriceV2 {
               amount
               currencyCode
+            }
+            lineItems(first: 20) {
+              edges {
+                node {
+                  discountedTotalPrice {
+                    amount
+                    currencyCode
+                  }
+                  originalTotalPrice {
+                    amount
+                    currencyCode
+                  }
+                  quantity
+                  title
+                  variant {
+                    id
+                    product {
+                      id
+                    }
+                  }
+                }
+              }
             }
           }
         }

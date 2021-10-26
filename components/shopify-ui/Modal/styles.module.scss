@@ -1,0 +1,21 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 40;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    height: 40vh;
+    width: 40vw;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+  }
+}
